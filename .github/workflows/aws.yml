@@ -8,8 +8,8 @@ on:
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}                   # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: test-ecr-repo           # set this to your Amazon ECR repository name
-  ECS_SERVICE: test-service                 # set this to your Amazon ECS service name
-  ECS_CLUSTER: test-cluster                 # set this to your Amazon ECS cluster name
+  # ECS_SERVICE: test-service                 # set this to your Amazon ECS service name
+  # ECS_CLUSTER: test-cluster                 # set this to your Amazon ECS cluster name
 
 jobs:
   deploy:
@@ -44,9 +44,6 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
-
-
-# Below can be used to deploy to ECS
 
 #    - name: Fill in the new image ID in the Amazon ECS task definition
 #      id: task-def
