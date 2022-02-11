@@ -23,7 +23,7 @@ def lambda_handler(event, context):
                 }
         }
     }
-    
+
     # Elasticsearch 6.x requires an explicit Content-Type header
     headers = {"Content-Type": "application/json"}
 
@@ -83,5 +83,3 @@ def aggregateConsumption(rawData):
 def calculateConsumption(consumption):
     tarrif = 0.002
     return consumption * tarrif
-
-
