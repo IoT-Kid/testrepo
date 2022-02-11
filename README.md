@@ -1,3 +1,3 @@
 # testrepo
 
-first git work of iot-kid
+test Vandura
